@@ -26,6 +26,7 @@
 	NSMutableDictionary *connections;
 }
 
++(id)sharedEngine;
 
 - (NSString *)generateAuthTokenFromUsername:(NSString *)username password:(NSString *)password;
 - (NSString *)generateSignatureFromDictionary:(NSDictionary *)dict;

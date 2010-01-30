@@ -10,7 +10,16 @@
 #import "FMCallback.h"
 #import "FMEngineURLConnection.h"
 
+static FMEngine *singleton;
+
 @implementation FMEngine
+
++(id)sharedEngine;
+{
+	if(!singleton)
+		singleton = [[FMEngine alloc] init];
+	return singleton;
+}
 
 static NSInteger sortAlpha(NSString *n1, NSString *n2, void *context) {
 	return [n1 caseInsensitiveCompare:n2];
